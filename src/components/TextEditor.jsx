@@ -2,29 +2,26 @@
 import "froala-editor/css/froala_style.min.css";
 import "froala-editor/css/froala_editor.pkgd.min.css";
 
+// Import all Froala Editor plugins;
+import "froala-editor/js/plugins.pkgd.min.js";
+// Import Froala editor component
 import FroalaEditorComponent from "react-froala-wysiwyg";
 
+// Default export
 export default function TextEditor() {
+  const config = {
+    // documentReady: true,
+    heightMin: "300",
+    events: {
+      contentChanged: function (e) {
+        console.log(e);
+      },
+    },
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      <FroalaEditorComponent tag="textarea" />
+    <div className="editor">
+      <FroalaEditorComponent tag="textarea" config={config} />
     </div>
   );
 }
