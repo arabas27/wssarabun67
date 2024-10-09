@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Layout from "./app/Layout";
+import CreateDoc from "./app/document/CreateDoc";
 
 const router = createBrowserRouter([
   {
@@ -14,8 +15,17 @@ const router = createBrowserRouter([
         element: <div>test</div>,
       },
       {
-        path: "create",
-        element: <div>create</div>,
+        path: "document",
+        children: [
+          {
+            path: "create",
+            element: <CreateDoc />,
+          },
+          {
+            path: "search",
+            element: <div>search</div>,
+          },
+        ],
       },
     ],
   },

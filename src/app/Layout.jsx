@@ -23,11 +23,11 @@ function Navigator() {
         options={[
           {
             optionTitle: "สร้างบันทึกข้อความ",
-            link: "create",
+            link: "/document/create",
           },
           {
-            optionTitle: "test2",
-            link: "https://www.google.com",
+            optionTitle: "ค้นหาเอกสาร",
+            link: "/document/search",
           },
         ]}
       />
